@@ -1,0 +1,33 @@
+<html>
+    <form method="post">
+        {{forms}}
+        {% csrf_token %}
+        <!-- <label for="your_name">Phone Name: </label>
+        <input id="your_name" type="text" name="your_name" value="{{ current_name }}"> -->
+        <input type="submit" value="OK">
+    </form>
+    
+    <table border="2px">
+        <tr>
+            <th>Name</th>
+          <th>Model No</th>
+          <th>Serial No</th>
+          <th>Description</th>
+        </tr>
+        <tbody>
+
+        {% for phone in phone_data %} 
+           <!-- {% if phone.name == 'Samsung' %} -->
+        <TR>
+            <TD class="c1" >{{phone.name }}</TD>
+            <TD class="c2" >{{phone.model }}</TD>
+            <TD class="c3" >{{phone.serial_no }}</TD>
+            <TD class="c4" >{{phone.description }}</TD>
+            <!-- {% endif %} -->
+            {% endfor %}
+        </TR>
+        </tbody>
+    </table>
+</html>
+
+
